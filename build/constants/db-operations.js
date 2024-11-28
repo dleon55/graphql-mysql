@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DELETE_LANGUAGE_IN_USER_LANGUAGES = exports.DELETE_LANGUAGE = exports.DELETE_USER_IN_USER_LANGUAGES = exports.DELETE_USER = exports.UPDATE_LANGUAGE = exports.UPDATE_USER = exports.ADD_LANGUAGE = exports.ADD_USER = exports.LANGUAGES_USERS_LIST = exports.USERS_LANGUAGES_LIST = exports.LANGUAGES_SELECT_DETAILS = exports.LANGUAGES_LIST = exports.USERS_SELECT_DETAILS = exports.USERS_LIST = void 0;
+exports.USERS_LIST = 'SELECT * FROM `users`';
+exports.USERS_SELECT_DETAILS = 'SELECT * FROM `users` WHERE id = ? ';
+exports.LANGUAGES_LIST = 'SELECT * FROM `languages`';
+exports.LANGUAGES_SELECT_DETAILS = 'SELECT * FROM `languages` WHERE id = ? ';
+exports.USERS_LANGUAGES_LIST = 'SELECT UL.user, UL.language, L.name FROM `users-languages` AS UL INNER JOIN `languages` AS L ON UL.language = L.id WHERE user = ?';
+exports.LANGUAGES_USERS_LIST = 'SELECT UL.user, UL.language, U.name, U.web, U.instructor, U.twitter FROM `users-languages` AS UL INNER JOIN `users` AS U ON UL.user = U.id WHERE language = ?';
+exports.ADD_USER = 'INSERT INTO `users` (`id`, `name`, `instructor`, `twitter`, `web`) VALUES (NULL, ?, ?, ?, ?)';
+exports.ADD_LANGUAGE = 'INSERT INTO `languages` (`id`, `name`) VALUES (NULL, ?)';
+exports.UPDATE_USER = 'UPDATE `users` SET `name` = ?, `instructor` = ?, `twitter` = ?, `web` = ? WHERE `users`.`id` = ?';
+exports.UPDATE_LANGUAGE = 'UPDATE `languages` SET `name` = ? WHERE `languages`.`id` = ?';
+exports.DELETE_USER = 'DELETE FROM `users` WHERE `users`.`id` = ?';
+exports.DELETE_USER_IN_USER_LANGUAGES = 'DELETE FROM `users-languages` WHERE `users-languages`.`user` = ?';
+exports.DELETE_LANGUAGE = 'DELETE FROM `languages` WHERE `languages`.`id` = ?';
+exports.DELETE_LANGUAGE_IN_USER_LANGUAGES = 'DELETE FROM `users-languages` WHERE `users-languages`.`language` = ?';
