@@ -166,3 +166,75 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+certificados/* Table for storing certificado data */
+CREATE TABLE certificados (
+  remesa INT,
+  id_plantel INT,
+  rvoe VARCHAR(50),
+  estatus VARCHAR(100),
+  folio VARCHAR(50) PRIMARY KEY,
+  literal VARCHAR(50),
+  tipo_certificado VARCHAR(100),
+  nombre VARCHAR(255),
+  numero_matricula VARCHAR(50),
+  institucion_emisora VARCHAR(255),
+  plantel VARCHAR(255),
+  clave_centro_trabajo VARCHAR(50),
+  plan_estudios VARCHAR(100),
+  promedio FLOAT,
+  promedio_literal VARCHAR(100),
+  creditos_obtenidos VARCHAR(100),
+  fecha_inicio_estudios DATE,
+  fecha_fin_estudios DATE,
+  tipo_documento VARCHAR(100),
+  fecha_timbrado DATETIME,
+  correo VARCHAR(100),
+  telefono VARCHAR(50)
+);
+
+/* Table for storing institution catalog */
+CREATE TABLE instituciones (
+  id_institucion INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(255)
+);
+
+/* Table for storing plantel catalog */
+CREATE TABLE planteles (
+  id_plantel INT PRIMARY KEY AUTO_INCREMENT,
+  nombre VARCHAR(255),
+  clave_centro_trabajo VARCHAR(50)
+);
+
+
+
+/* Insert dummy data into certificados table */
+INSERT INTO certificados (
+  remesa, id_plantel, rvoe, estatus, folio, literal, tipo_certificado, nombre, numero_matricula,
+  institucion_emisora, plantel, clave_centro_trabajo, plan_estudios, promedio, promedio_literal,
+  creditos_obtenidos, fecha_inicio_estudios, fecha_fin_estudios, tipo_documento, fecha_timbrado, correo, telefono
+) VALUES (
+  271161, 3997, '19/1328', 'Registrado en el SIGED', 'CBG23533656', 'CBG', 'Certificado de terminación de estudios',
+  'ALEXANDER FABIAN PEREZ LOPEZ', '15594', 'Direccion General del Bachillerato',
+  'ESCUELA PREPARATORIA PARTICULAR INCORPORADA', '15PBH3997H', 'Bachillerato General', 7.4, 'Siete punto Cuatro',
+  '332 de un total de 332', '2020-07-20', '2023-07-19', 'Certificado de terminación de estudios', '2023-07-21 17:18:21',
+  'controlescolar_dgb@nube.sep.gob.mx', '55-3601-1000 Ext. 63329'
+), (
+  271162, 4001, '20/1456', 'Registrado en el SIGED', 'CBG23533657', 'CBG', 'Certificado de terminación de estudios',
+  'MARIA FERNANDA GONZALEZ SANCHEZ', '15595', 'Direccion General del Bachillerato',
+  'ESCUELA PREPARATORIA PARTICULAR INCORPORADA', '15PBH4001J', 'Bachillerato General', 8.1, 'Ocho punto Uno',
+  '330 de un total de 332', '2020-08-15', '2023-08-15', 'Certificado de terminación de estudios', '2023-08-21 16:00:00',
+  'controlescolar_dgb@nube.sep.gob.mx', '55-3601-1000 Ext. 63330'
+), (
+  271163, 4002, '21/1678', 'Registrado en el SIGED', 'CBG23533658', 'CBG', 'Certificado de terminación de estudios',
+  'JUAN CARLOS HERNANDEZ MARTINEZ', '15596', 'Direccion General del Bachillerato',
+  'ESCUELA PREPARATORIA OFICIAL', '15PBH4002K', 'Bachillerato General', 9.0, 'Nueve punto Cero',
+  '332 de un total de 332', '2020-09-10', '2023-09-10', 'Certificado de terminación de estudios', '2023-09-25 10:45:00',
+  'controlescolar_dgb@nube.sep.gob.mx', '55-3601-1000 Ext. 63331'
+), (
+  271164, 4003, '22/1987', 'Registrado en el SIGED', 'CBG23533659', 'CBG', 'Certificado de terminación de estudios',
+  'LUIS MIGUEL RUIZ LOPEZ', '15597', 'Direccion General del Bachillerato',
+  'ESCUELA PREPARATORIA TECNICA', '15PBH4003L', 'Bachillerato Tecnico', 7.8, 'Siete punto Ocho',
+  '328 de un total de 332', '2020-10-05', '2023-10-05', 'Certificado de terminación de estudios', '2023-10-30 09:30:00',
+  'controlescolar_dgb@nube.sep.gob.mx', '55-3601-1000 Ext. 63332'
+);
