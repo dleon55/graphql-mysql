@@ -6,7 +6,30 @@ const resolverQueryCertificado: IResolvers = {
     Query: {
         certificadoPorFolio: async (_, { folio }, { connection }) => {
             return new Promise((resolve, reject) => {
-                const sql = 'SELECT * FROM certificados WHERE folio = ?';
+                const sql =  `USE pace;
+
+SELECT
+  CONCAT(alumno_NOMBRE, ' ', alumno_PRIMERAPELLIDO, ' ', alumno_SEGUNDOAPELLIDO) AS nombre_y_apellidos,
+  numero_control AS numero_matricula,
+  nombre_iems AS institucion_educativa_emisora,
+  CONCAT(TIPO_PLANTEL, ' ', NOMBRE_NUMERO_PLANTEL) AS PLANTEL_SERVICIO_EDUCATIVO,
+  CCT,
+  'Bachillerato general' AS PLAN_DE_ESTUDIOS,
+  CONCAT(PROMEDIO_APROVECHAMIENTO, ' ', PROMEDIO_APROVECHAMIENTO_TEXTO) AS promedio,
+  CONCAT(CREDITOS_OBTENIDOS, ' de un total de ', TOTAL_CREDITOS) AS CREDITOS_OBTENIDOS,
+  CONCAT(PERIODO_INICIO, ' al ', PERIODO_TERMINO) AS periodo_en_que_se_cursaron_los_estudios,
+  (CASE
+    WHEN tipo_certificado = 1 THEN 'Certificado de termino de estudios'
+    WHEN tipo_certificado = 2 THEN 'Certificado parcial de estudios'
+    ELSE 'null'
+  END) AS tipo_de_documento,
+  'Registrado en el SIGED' AS estatus,
+  FOLIO_CONTROL AS FOLIO,
+  FECHA_SEP AS FECHA_Y_HORA_DE_TIMBRADO,
+  'controlescolar_dgb@nube.sep.gob.mx' AS CORREO_ELECTRONICO,
+  '55-36011000 ext.63329' AS telefono
+FROM XML_DEC
+WHERE FOLIO_CONTROL IN ('?');`;
                 connection.query(sql, [folio], (error: any | null, results: any[]) => {
                     if (error) {
                         console.error('Error connecting: ' + error.stack);

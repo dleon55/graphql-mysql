@@ -1,0 +1,71 @@
+// {
+//   "workbench.colorCustomizations": {
+//     "editor.background": "#000000",       // Fondo negro clásico arcade
+//     "editor.foreground": "#FFFF00",       // Texto principal amarillo Pac-Man
+//     "editorCursor.foreground": "#FF0000", // Cursor rojo (Blinky)
+//     "editor.selectionBackground": "#0000FF",  // Azul brillante (laberinto)
+//     "editor.lineHighlightBackground": "#1a1a1a",
+//     "editorIndentGuide.background": "#222222",
+//     "editorIndentGuide.activeBackground": "#FFFF00", // Pac-Man activo
+//     "editorLineNumber.foreground": "#FF69B4", // Rosa (Pinky)
+    
+//     "sideBar.background": "#000000",
+//     "sideBar.foreground": "#FFA500",      // Naranja (Clyde)
+    
+//     "activityBar.background": "#000000",
+//     "activityBar.foreground": "#00FFFF",  // Azul (Inky)
+//     "activityBar.border": "#FF0000",
+
+//     "statusBar.background": "#000000",
+//     "statusBar.foreground": "#FFFF00",
+
+//     "titleBar.activeBackground": "#000000",
+//     "titleBar.activeForeground": "#FFFF00"
+//   },
+
+//   "editor.tokenColorCustomizations": {
+//     "comments": "#00FFFF",        // Azul fantasma
+//     "keywords": "#FF0000",        // Palabras clave rojas (Blinky)
+//     "strings": "#FFFF00",         // Cadenas amarillas (Pac-Man)
+//     "functions": "#FF69B4",       // Funciones rosa (Pinky)
+//     "numbers": "#FFA500",         // Naranja (Clyde)
+//     "types": "#FFFFFF"            // Blanco para claridad
+//   },
+
+//   "workbench.colorTheme": "Default Dark+" // Base visual
+// }
+{
+  "workbench.colorCustomizations": {
+    "editor.background": "#1A1A1A",         // fondo gris muy oscuro para no forzar la vista
+    "editor.foreground": "#FFFFFF",         // texto blanco
+    "editorCursor.foreground": "#A28C49",   // cursor dorado institucional
+    "editor.selectionBackground": "#9A1B32", // selección en guinda
+    "editor.lineHighlightBackground": "#222222",
+    "editorIndentGuide.background": "#333333",
+    "editorIndentGuide.activeBackground": "#A28C49",
+    "editorLineNumber.foreground": "#4A4A4A",
+
+    "sideBar.background": "#1A1A1A",
+    "sideBar.foreground": "#FFFFFF",
+    "activityBar.background": "#1A1A1A",
+    "activityBar.foreground": "#006341",    // verde bandera
+    "activityBar.border": "#9A1B32",
+
+    "statusBar.background": "#1A1A1A",
+    "statusBar.foreground": "#A28C49",
+
+    "titleBar.activeBackground": "#1A1A1A",
+    "titleBar.activeForeground": "#FFFFFF"
+  },
+
+  "editor.tokenColorCustomizations": {
+    "comments": "#A28C49",     // dorado para comentarios
+    "keywords": "#9A1B32",     // guinda para palabras clave
+    "strings": "#006341",      // verde para cadenas
+    "functions": "#F5F5F5",    // funciones en gris claro
+    "numbers": "#A28C49",      // dorado para números
+    "types": "#FFFFFF"
+  },
+
+  "workbench.colorTheme": "Default Dark+"
+}
